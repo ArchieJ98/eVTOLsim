@@ -21,6 +21,7 @@ void VehicleInstance::fly(double time_increment)
     if(currentBattery >= battery_used)
     {
         currentBattery -= battery_used;
+    
         total_flightTime += time_increment;
         distanceFlown += distance;
         passengerMiles += static_cast<int>(vehicle_type.passengerCount * distance); 
