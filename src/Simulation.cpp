@@ -4,16 +4,18 @@
 #include <random>
 using namespace std;
 
-Simulation::Simulation():chargers(3),sim_time(3.0), current_time(0.0), time_Increment(0.1){}
+Simulation::Simulation():chargers(3),sim_time(3.0), current_time(0.0), time_Increment(0.5){}
 
 void Simulation::vehicle_Init()
 {
     //Hardcoding the vehicle types and its configurartions
-    vehicle_Types.push_back(Vehicle("JobyS4", 100, 80, 1.5, 0.8, 4, 0.01));
-    vehicle_Types.push_back(Vehicle("CityAirbus", 90, 70, 1.2, 1.0, 4, 0.02));
-    vehicle_Types.push_back(Vehicle("ArcherMaker", 110, 85, 1.8, 0.75, 5, 0.015));
-    vehicle_Types.push_back(Vehicle("LiliumJet",   120, 75, 1.6, 0.9,  6, 0.018));
-    vehicle_Types.push_back(Vehicle("WiskCora",     80, 65, 1.3, 1.1,  2, 0.025));
+    vehicle_Types.push_back(Vehicle("Alpha Company", 120, 320, 0.6, 1.6, 4, 0.25));
+    vehicle_Types.push_back(Vehicle("Bravo Company", 100, 100, 0.2, 1.5, 5, 0.10));
+    vehicle_Types.push_back(Vehicle("Charlie Company", 160, 220, 0.8, 2.2, 3, 0.5));
+    vehicle_Types.push_back(Vehicle("Delta Company", 90, 120, 0.62, 0.8, 2, 0.22));
+    vehicle_Types.push_back(Vehicle("Echo Company", 30, 150, 0.3, 5.8,  2, 0.61));
+
+    map<string, int> type_count;
 
     mt19937 gen(random_device{}());
     uniform_int_distribution<>dist(0, vehicle_Types.size() -1);
@@ -22,7 +24,16 @@ void Simulation::vehicle_Init()
     {
         const Vehicle &v= vehicle_Types[dist(gen)];
         vehicles.emplace_back(v);
+        type_count[v.name]++;
     }
+
+    cout << "--Vehicle Type Distribution--" << endl;
+
+    for(const auto&[type, count]: type_count)
+    {
+        cout << "Type: " << type << " Count = " << count << endl;
+    }
+    cout << "............................................................." << endl;
 }
 
 void Simulation::run_Sim()

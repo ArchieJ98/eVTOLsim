@@ -1,6 +1,6 @@
-#include "Simulation.h"
-
 #include <iostream>
+
+#include "Simulation.h"
 
 int main()
 {

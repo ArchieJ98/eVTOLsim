@@ -12,6 +12,18 @@ struct Stats{
     int total_PassengerMiles = 0;
     int flight_count = 0;
     int charge_count = 0;
+
+    double avg_FlightTime() const{
+        return flight_count ? total_FlightTime/flight_count : 0;
+    }
+
+    double avg_Distance()const{
+        return flight_count ? total_Distance/flight_count : 0;
+    }
+
+    double avg_ChargeTime()const{
+        return charge_count ? total_ChargingTime/charge_count : 0;
+    }
 };
 
 class Statistics{
