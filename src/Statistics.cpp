@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include <iomanip>
 
-void Statistics::logFlight(const string &vehicle_type, double flight_time, double distance, int passengers)
+void Statistics::log_Flight(const string &vehicle_type, double flight_time, double distance, int passengers)
 {
     Stats &s = StatMap[vehicle_type];
     s.total_FlightTime += flight_time;
@@ -13,7 +13,7 @@ void Statistics::logFlight(const string &vehicle_type, double flight_time, doubl
     s.flight_count++; 
 }
 
-void Statistics::logCharge(const string &vehicle_type, double charge_time)
+void Statistics::log_Charge(const string &vehicle_type, double charge_time)
 {
     Stats &s = StatMap[vehicle_type];
     s.total_ChargingTime += charge_time;
@@ -22,12 +22,12 @@ void Statistics::logCharge(const string &vehicle_type, double charge_time)
     s.charge_count++;
 }
 
-void Statistics::logFaults(const string &vehicle_type)
+void Statistics::log_Faults(const string &vehicle_type)
 {
     StatMap[vehicle_type].total_Faults++;
 }
 
-void Statistics::printStats()
+void Statistics::print_Stats()
 {
     cout << "\n--- Simulation Summary ---\n";
 

@@ -1,8 +1,12 @@
 #pragma once
 #include <string>
+#include <random>
+
 #include "Vehicle.h"
 
 class VehicleInstance{
+    
+
     public:
         Vehicle vehicle_type;
         double currentBattery;           // Current battery level (kWh)
@@ -16,8 +20,12 @@ class VehicleInstance{
 
         void fly(double time_increment);
         void charge(double time_increment);
-        void simulateFault(double time_increment);
-        bool charge_depleted();                     //check if the battery is depleted
-        bool charge_completed();                    //checks if the battery is fully charged
+        void simulate_Fault(double time_increment);
+        bool charge_depleted() const;                     //check if the battery is depleted
+        bool charge_completed() const;                    //checks if the battery is fully charged
+
+    private:
+        std::mt19937 gen;
+        std::uniform_real_distribution<> dis{0.0, 1.0};
 
 };

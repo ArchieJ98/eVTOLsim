@@ -45,8 +45,8 @@ void Simulation::run_Sim()
             if(!v.charge_depleted())
             {
                 v.fly(time_Increment);
-                v.simulateFault(time_Increment);
-                stats.logFlight(v.vehicle_type.name, time_Increment, v.vehicle_type.cruiseSpeed * time_Increment, v.vehicle_type.passengerCount);
+                v.simulate_Fault(time_Increment);
+                stats.log_Flight(v.vehicle_type.name, time_Increment, v.vehicle_type.cruiseSpeed * time_Increment, v.vehicle_type.passengerCount);
 
             }
             else{
@@ -59,11 +59,11 @@ void Simulation::run_Sim()
         {
             if(!v.charge_depleted() && !v.charge_completed())
             {
-                stats.logCharge(v.vehicle_type.name, time_Increment);
+                stats.log_Charge(v.vehicle_type.name, time_Increment);
             }
         }
         current_time += time_Increment;
     }
 
-    stats.printStats();
+    stats.print_Stats();
 }

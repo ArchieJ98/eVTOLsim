@@ -10,7 +10,8 @@ VehicleInstance::VehicleInstance(const Vehicle &vehicleType) : vehicle_type(vehi
                                                                total_chargingTime(0),
                                                                faultCount(0),
                                                                distanceFlown(0),
-                                                               passengerMiles(0) {}
+                                                               passengerMiles(0),
+                                                               gen(std::random_device{}()) {}
 
 void VehicleInstance::fly(double time_increment)
 {
@@ -56,11 +57,8 @@ void VehicleInstance::charge(double time_increment)
     total_chargingTime += time_increment * ((currentBattery - battery_atArrival) / battery_added); 
 }
 
-void VehicleInstance::simulateFault(double time_increment)
+void VehicleInstance::simulate_Fault(double time_increment)
 {
-    static mt19937 gen(random_device{}());
-    static uniform_real_distribution<> dis(0.0, 1.0);
-
     double faultProbability  = vehicle_type.faultProbability * time_increment;
 
     if(dis(gen) < faultProbability )
@@ -69,12 +67,12 @@ void VehicleInstance::simulateFault(double time_increment)
     }
 }
 
-bool VehicleInstance::charge_depleted()
+bool VehicleInstance::charge_depleted() const
 {
     return currentBattery <= 0.0;
 }
 
-bool VehicleInstance::charge_completed()
+bool VehicleInstance::charge_completed() const
 {
     return currentBattery >= vehicle_type.batteryCapacity;
 }

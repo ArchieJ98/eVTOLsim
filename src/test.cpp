@@ -65,7 +65,7 @@ void testFaultSimulationHighProbability() {
     double time_increment = 1.0;
     int initialFaults = vi.faultCount;
     for (int i = 0; i < 10; ++i) {
-        vi.simulateFault(time_increment);
+        vi.simulate_Fault(time_increment);
     }
 
     ASSERT_TRUE(vi.faultCount > initialFaults, "\tFaults should occur when faultProbability is 1.0");
