@@ -56,7 +56,7 @@ void testChargeStopsAtCapacity() {
     double time_increment = 2.0;
     vi.charge(time_increment);
 
-    ASSERT_TRUE(vi.currentBattery >= v.batteryCapacity, "\tBattery should not exceed capacity");
+    ASSERT_TRUE(vi.currentBattery <= v.batteryCapacity, "\tBattery should not exceed capacity");
 }
 
 void testFaultSimulationHighProbability() {

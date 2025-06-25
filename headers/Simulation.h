@@ -22,4 +22,13 @@ class Simulation{
         Simulation();
         void vehicle_Init();   //Load vehicle definitions and create instances
         void run_Sim();        // Begins the Simulation
+        
+        // Getter methods for testing
+        double getSimTime() const;
+        double getCurrentTime() const;
+        int getVehicleCount() const;
+        VehicleInstance* getVehiclePointer(int index);
+        ChargerManager& getChargers();
+        void runPartialSimulation(double duration);
+        void requestChargingForVehicle(VehicleInstance* v);
 };
