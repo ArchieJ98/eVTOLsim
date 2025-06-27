@@ -47,6 +47,11 @@
         "text_encoding": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "map": "cpp",
+        "unordered_set": "cpp",
+        "iomanip": "cpp",
+        "istream": "cpp",
+        "sstream": "cpp"
     }
 }
