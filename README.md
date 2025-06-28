@@ -67,7 +67,7 @@ On Linux:
 ./sim
 ```
 
-## Simulation
+## Simulation Classes
 
 ### Core Classes
 
