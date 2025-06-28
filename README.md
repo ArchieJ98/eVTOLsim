@@ -37,14 +37,6 @@ cd build
 g++ ..\src\*.cpp -I ..\headers -o sim.exe -std=c++17
 ```
 
-### Using CMake:
-```cmd
-mkdir build 
-cd build
-cmake ..
-cmake --build .
-```
-
 ## Usage
 
 ### Running the Simulation
@@ -65,11 +57,11 @@ sim.exe
 g++ -std=c++17 -I headers test/Simulation_Test.cpp src/Vehicle.cpp src/ChargerManager.cpp src/Vehicle_Instance.cpp src/Simulation.cpp src/Statistics.cpp -o test_sim
 ./test_sim
 ```
-# On Windows:
+### On Windows:
 ```cmd
 sim.exe
 ```
-# On Linux:
+### On Linux:
 
 ```bash
 ./sim
@@ -78,23 +70,25 @@ sim.exe
 
 ### Core Classes
 
-| Class | Purpose | Key Features |
-|-------|---------|--------------|
-| **Vehicle** | Static vehicle configuration | Speed, battery capacity, fault probability |
+|| Class             | Purpose                  | Key Features                            |
+|------------------|--------------------------|------------------------------------------|
+| **Vehicle**       | Static vehicle config    | Speed, battery capacity, fault probability |
 | **VehicleInstance** | Dynamic vehicle state | Current battery, flight time, faults, distance |
-| **ChargerManager** | Charging station management | Queue system, charger allocation |
-| **Statistics** | Data aggregation | Flight/charge logging, performance metrics |
-| **Simulation** | Main orchestrator | Time progression, vehicle coordination |
+| **ChargerManager** | Charging mgmt           | Queue system, charger allocation         |
+| **Statistics**    | Data aggregation         | Flight/charge logging, performance metrics |
+| **Simulation**    | Main orchestrator        | Time progression, vehicle coordination   |
+
 
 ### Vehicle Types (Pre-configured)
 
 | Company | Cruise Speed (mph) | Battery (kWh) | Charge Time (hrs) | Energy/Mile (kWh) | Passengers | Fault Rate |
-|---------|-------------------|---------------|-------------------|-------------------|------------|------------|
-| Alpha | 120 | 320 | 0.6 | 1.6 | 4 | 25% |
-| Bravo | 100 | 100 | 0.2 | 1.5 | 5 | 10% |
-| Charlie | 160 | 220 | 0.8 | 2.2 | 3 | 50% |
-| Delta | 90 | 120 | 0.62 | 0.8 | 2 | 22% |
-| Echo | 30 | 150 | 0.3 | 5.8 | 2 | 61% |
+|---------|--------------------|---------------|-------------------|-------------------|------------|------------|
+| Alpha   | 120                | 320           | 0.6               | 1.6               | 4          | 25%        |
+| Bravo   | 100                | 100           | 0.2               | 1.5               | 5          | 10%        |
+| Charlie | 160                | 220           | 0.8               | 2.2               | 3          | 50%        |
+| Delta   | 90                 | 120           | 0.62              | 0.8               | 2          | 22%        |
+| Echo    | 30                 | 150           | 0.3               | 5.8               | 2          | 61%        |
+
 
 ## How It Works
 
