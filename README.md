@@ -57,16 +57,17 @@ sim.exe
 g++ -std=c++17 -I headers test/Simulation_Test.cpp src/Vehicle.cpp src/ChargerManager.cpp src/Vehicle_Instance.cpp src/Simulation.cpp src/Statistics.cpp -o test_sim
 ./test_sim
 ```
-### On Windows:
+On Windows:
 ```cmd
 sim.exe
 ```
-### On Linux:
+On Linux:
 
 ```bash
 ./sim
+```
 
-## Simulation Components
+## Simulation
 
 ### Core Classes
 
