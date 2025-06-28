@@ -71,7 +71,7 @@ On Linux:
 
 ### Core Classes
 
-|| Class             | Purpose                  | Key Features                            |
+| Class             | Purpose                  | Key Features                            |
 |------------------|--------------------------|------------------------------------------|
 | **Vehicle**       | Static vehicle config    | Speed, battery capacity, fault probability |
 | **VehicleInstance** | Dynamic vehicle state | Current battery, flight time, faults, distance |
