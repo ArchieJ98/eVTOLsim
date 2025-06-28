@@ -13,7 +13,7 @@ using namespace std;
  * 
  * Initializes default simulation parameters and binds the ChargerManager to the shared Statistics.
  */
-Simulation::Simulation():chargers(stats, 3),sim_time(3.0), current_time(0.0), time_Increment(0.6){}
+Simulation::Simulation():chargers(stats, 3),sim_time(3.0), current_time(0.0), time_Increment(0.5){}
 
 void Simulation::vehicle_Init()
 {
