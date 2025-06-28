@@ -20,11 +20,6 @@ eVTOL_sim functions as a simulation tool designed to evaluate the behaviour of e
 
 ## Building the Project
 
-### Using GCC/Clang (Linux/macOS):
-```bash
-g++ -std=c++17 -Wall -Wextra -I headers -o sim src/*.cpp
-```
-
 ### Using Git clone (Windows CMD):
 ```cmd
 git clone https://github.com/ArchieJ98/eVTOLsim.git
@@ -36,19 +31,24 @@ mkdir build
 cd build
 g++ ..\src\*.cpp -I ..\headers -o sim.exe -std=c++17
 ```
+### Using VS Code(terminal):
+```cmd
+g++ src\Simulation.cpp src\Vehicle.cpp src\Vehicle_Instance.cpp src\ChargerManager.cpp src\Statistics.cpp src\main.cpp -Iheaders -o sim
+```
 
 ## Usage
 
 ### Running the Simulation
-For Linux:
 
-```bash
-./sim
-```
 For Windows:
 
 ```cmd
 sim.exe
+```
+
+For VS Code:
+```cmd
+.\sim
 ```
 
 ### Running Tests
@@ -56,15 +56,6 @@ sim.exe
 # Compile and run individual test files
 g++ -std=c++17 -I headers test/Simulation_Test.cpp src/Vehicle.cpp src/ChargerManager.cpp src/Vehicle_Instance.cpp src/Simulation.cpp src/Statistics.cpp -o test_sim
 ./test_sim
-```
-On Windows:
-```cmd
-sim.exe
-```
-On Linux:
-
-```bash
-./sim
 ```
 
 ## Simulation Classes
