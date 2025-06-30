@@ -214,7 +214,6 @@ eVTOL_Sim/
 │   ├── ChargerManager_Test.cpp
 │   ├── Statistics_Test.cpp
 │   └── Simulation_Test.cpp
-├── CMakeLists.txt               # Build configuration
 ├── fault_log.txt                # Fault event log
 ├── sim.exe                      # Compiled executable (Windows)
 └── README.md                    # Project documentation
